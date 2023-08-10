@@ -12,7 +12,7 @@ env:
 jobs:
   fmt-clippy:
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         platform: [windows-latest, macos-latest, ubuntu-latest]
         rust:
@@ -83,7 +83,10 @@ jobs:
 
       - name: yarn install
         run: yarn install
+      - name: Install Just
+      - run: cargo install just
 
       - name: Build
         # build in debug mode for speed
-        run: yarn tauri build --debug
+        #run: yarn tauri build
+        run: just build
