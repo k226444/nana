@@ -88,7 +88,4 @@ jobs:
 
       - name: Build
         # build in debug mode for speed
-        #run: yarn tauri build
-        run: | 
-          yarn tauri dev
-          just build
+        run: yarn tauri build
